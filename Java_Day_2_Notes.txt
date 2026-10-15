@@ -1,0 +1,791 @@
+DAY 2 — VARIABLES, DATA TYPES & TYPE CASTING
+
+LEARNING OBJECTIVES
+
+By the end of Day 2, the learner should be able to:
+- Understand variables and identifiers
+- Declare and initialize variables
+- Understand Java's 8 primitive data types
+- Choose appropriate basic data types
+- Understand literals
+- Print and modify variables
+- Perform basic calculations using variables
+- Understand primitive vs reference types at a basic level
+- Understand type conversion
+- Perform widening and narrowing type casting
+
+
+1. DAY 1 REVISION
+
+Ask:
+1. What is Java?
+2. What is JVM?
+3. What is JDK?
+4. What is bytecode?
+5. Difference between java and javac?
+6. Where does Java execution start?
+7. Difference between print() and println()?
+8. What is a .java file?
+9. What is a .class file?
+
+Quick challenge:
+Create a Java program that prints your name, college, course and today's day number.
+
+
+2. WHAT IS A VARIABLE?
+
+A variable is a named memory location used to store a value.
+
+Example:
+int age = 21;
+
+Here:
+int  -> Data type
+age  -> Variable name
+21   -> Value
+=    -> Assignment operator
+;    -> End of statement
+
+
+3. WHY DO WE NEED VARIABLES?
+
+Instead of:
+System.out.println(21);
+System.out.println(21);
+System.out.println(21);
+
+we can write:
+int age = 22;
+
+System.out.println(age);
+System.out.println(age);
+System.out.println(age);
+
+If the value changes, we only need to change the variable.
+
+
+4. VARIABLE DECLARATION
+
+Example:
+int age;
+
+This declares a variable named age that can store an integer.
+
+
+5. VARIABLE INITIALIZATION
+
+Giving a variable its first value is called initialization.
+
+Example:
+age = 21;
+
+Declaration and initialization together:
+int age = 21;
+
+
+6. BASIC VARIABLE SYNTAX
+
+dataType variableName = value;
+
+Examples:
+int age = 21;
+double salary = 25000.50;
+char grade = 'A';
+boolean passed = true;
+
+
+7. WHAT IS A DATA TYPE?
+
+A data type tells Java what kind of value is stored in a variable.
+
+Example:
+int age = 21;
+String name= "Adhitya";
+
+int tells Java that age stores an integer.
+
+Example:
+double salary = 25000.50;
+
+double tells Java that salary stores a decimal value.
+
+
+8. JAVA DATA TYPES
+
+Java data types can broadly be divided into:
+
+Data Types
+|
++-- Primitive
+|
++-- Reference
+
+Java has 8 primitive data types:
+
+byte
+short
+int
+long
+float
+double
+char
+boolean
+
+
+9. INTEGER DATA TYPES
+
+Java provides four integer types:
+
+byte
+short
+int
+long
+
+Examples:
+byte age = 21;
+short year = 2026;
+int salary = 50000;
+long population = 1400000000L;
+
+For normal integer calculations, int is generally the default choice.
+
+
+10. int
+
+int is the most commonly used integer type.
+
+Examples:
+int age = 21;
+int marks = 85;
+int numberOfStudents = 50;
+
+Integer values are whole numbers such as:
+10
+25
+100
+-5
+0
+
+
+11. long
+
+Use long when an integer value may exceed the range of int.
+
+Example:
+long population = 1400000000L;
+
+The L tells Java that the literal is a long.
+
+
+12. DECIMAL DATA TYPES
+
+Java provides:
+float
+double
+
+double:
+double price = 99.99;
+double average = 87.5;
+
+double is generally the default choice for decimal calculations.
+
+float:
+float temperature = 36.5f;
+
+The f tells Java that the literal is a float.
+
+
+13. char
+
+char stores a single character.
+
+Examples:
+char grade = 'A';
+char gender = 'M';
+char symbol = '#';
+
+Character uses single quotes:
+'A'
+
+String uses double quotes:
+"A"
+
+Correct:
+char letter = 'A';
+
+Incorrect:
+char letter = "A";
+
+
+14. boolean
+
+A boolean stores one of two values:
+
+true
+false
+
+Examples:
+boolean isPassed = true;
+boolean isLoggedIn = false;
+
+
+15. PRIMITIVE DATA TYPE SUMMARY
+
+byte    -> Small integer
+short   -> Small/medium integer
+int     -> Normal integer
+long    -> Large integer
+float   -> Decimal value
+double  -> Decimal value
+char    -> Single character
+boolean -> true or false
+
+
+16. FIRST VARIABLE PROGRAM
+
+public class VariablesDemo {
+
+    public static void main(String[] args) {
+
+        int age = 21;
+        double percentage = 85.5;
+        char grade = 'A';
+        boolean passed = true;
+
+        System.out.println(age);
+        System.out.println(percentage);
+        System.out.println(grade);
+        System.out.println(passed);
+
+    }
+}
+
+Output:
+21
+85.5
+A
+true
+
+
+17. PRINTING TEXT WITH VARIABLES
+
+Example:
+int age = 21;
+System.out.println("Age: " + age);
+
+Output:
+Age: 21
+
+Example:
+String name = "Adhitya";
+int age = 21;
+
+System.out.println("Name: " + name);
+System.out.println("Age: " + age);
+
+String stores a sequence of characters and is a reference type, not one of Java's 8 primitive types.
+
+
+18. STRING VARIABLE
+
+Examples:
+String name = "Adhitya";
+String city = "Puducherry";
+
+System.out.println("Name: " + name);
+System.out.println("City: " + city);
+
+
+19. THE + OPERATOR WITH VARIABLES
+
+The + operator can perform addition.
+
+int a = 10;
+int b = 20;
+
+System.out.println(a + b);
+
+Output:
+30
+
+When a String is involved:
+
+System.out.println("Sum = " + a + b);
+
+Output:
+Sum = 1020
+
+To get:
+Sum = 30
+
+use:
+System.out.println("Sum = " + (a + b));
+
+Parentheses make the addition happen first.
+
+
+20. CHANGING VARIABLE VALUES
+
+Example:
+int age = 21;
+
+System.out.println(age);
+
+age = 22;
+
+System.out.println(age);
+
+Output:
+21
+22
+
+After a variable has been declared, assign a new value without writing the data type again:
+age = 22;
+
+
+21. IDENTIFIERS
+
+Variable names are called identifiers.
+
+Examples:
+age
+studentName
+totalMarks
+average
+salary
+
+Rules:
+- Can contain letters
+- Can contain digits
+- Can contain underscore (_)
+- Can contain dollar sign ($)
+- Cannot start with a digit
+- Cannot contain spaces
+- Cannot be a Java keyword
+- Java is case-sensitive
+
+Valid:
+int age;
+int studentAge;
+int student_age;
+int age2;
+
+Invalid:
+int 2age;
+int student age;
+
+
+22. JAVA IS CASE-SENSITIVE
+
+These are different variables:
+
+int age = 20;
+int Age = 30;
+int AGE = 40;
+
+age, Age and AGE are three different identifiers.
+
+
+23. VARIABLE NAMING CONVENTION
+
+Java commonly uses camelCase.
+
+Prefer:
+int studentName;
+int totalMarks;
+int studentAge;
+
+Meaningful names are better than unclear names such as:
+int x;
+int a;
+int n;
+
+
+24. LITERALS
+
+A literal is a fixed value written directly in source code.
+
+Examples:
+10
+25.5
+'A'
+true
+"Hello"
+
+Example:
+int age = 21;
+21 is an integer literal.
+
+char grade = 'A';
+'A' is a character literal.
+
+boolean passed = true;
+true is a boolean literal.
+
+
+25. TYPE CONVERSION
+
+Sometimes one data type needs to be converted into another.
+
+Examples:
+int -> double
+double -> int
+
+Two important categories:
+
+Type Conversion
+|
++-- Widening
+|
++-- Narrowing
+
+
+26. WIDENING CONVERSION
+
+Widening converts a smaller compatible numeric type into a larger type.
+
+Example:
+int number = 100;
+double value = number;
+
+Here:
+int -> double
+
+Java performs this automatically.
+
+Output:
+100.0
+
+This is also called implicit type conversion.
+
+
+27. NARROWING CONVERSION
+
+Narrowing converts a larger type into a smaller compatible type.
+
+Example:
+double number = 100.75;
+int value = (int) number;
+
+System.out.println(value);
+
+Output:
+100
+
+The decimal part is lost.
+
+
+28. TYPE CASTING
+
+General syntax:
+targetType variable = (targetType) value;
+
+Example:
+double price = 99.99;
+int convertedPrice = (int) price;
+
+System.out.println(convertedPrice);
+
+Output:
+99
+
+Type casting can result in loss of information.
+
+
+29. TYPE CASTING EXAMPLE
+
+double value = 9.99;
+int number = (int) value;
+
+System.out.println(number);
+
+Output:
+9
+
+Casting does not round the number.
+
+9.99 -> 9
+9.50 -> 9
+9.01 -> 9
+
+
+30. WIDENING VS NARROWING
+
+Widening:
+int number = 100;
+double value = number;
+
+No explicit cast is required.
+
+Narrowing:
+double number = 100.99;
+int value = (int) number;
+
+Explicit casting is required.
+
+
+31. PRIMITIVE VS REFERENCE TYPES
+
+Primitive examples:
+int
+double
+char
+boolean
+
+Reference examples:
+String
+Arrays
+Objects
+Classes
+
+Basic understanding:
+Primitive types represent simple values.
+Reference types refer to objects.
+
+Reference types will be studied in more detail later.
+
+
+32. GUIDED PROGRAM — STUDENT PROFILE
+
+public class StudentProfile {
+
+    public static void main(String[] args) {
+
+        String name = "Adhitya";
+        int age = 21;
+        double percentage = 85.5;
+        char grade = 'A';
+        boolean passed = true;
+
+        System.out.println("Name       : " + name);
+        System.out.println("Age        : " + age);
+        System.out.println("Percentage : " + percentage);
+        System.out.println("Grade      : " + grade);
+        System.out.println("Passed     : " + passed);
+
+    }
+}
+
+Output:
+Name       : Adhitya
+Age        : 21
+Percentage : 85.5
+Grade      : A
+Passed     : true
+
+
+33. GUIDED PROGRAM — BASIC CALCULATOR
+
+public class Calculator {
+
+    public static void main(String[] args) {
+
+        int a = 20;
+        int b = 10;
+
+        System.out.println("Addition       : " + (a + b));
+        System.out.println("Subtraction    : " + (a - b));
+        System.out.println("Multiplication : " + (a * b));
+        System.out.println("Division       : " + (a / b));
+        System.out.println("Remainder      : " + (a % b));
+
+    }
+}
+
+Output:
+Addition       : 30
+Subtraction    : 10
+Multiplication : 200
+Division       : 2
+Remainder      : 0
+
+
+34. DAY 2 PRACTICE — 1 HOUR
+
+LEVEL 1 — VARIABLES
+
+Problem 1:
+Create variables for:
+- Name
+- Age
+- City
+- College
+
+Display them.
+
+Problem 2:
+Create variables for:
+- Student Name
+- Roll Number
+- Department
+- Percentage
+- Grade
+
+Display them in a formatted profile.
+
+Problem 3:
+Create two integer variables and print:
+- Addition
+- Subtraction
+- Multiplication
+- Division
+- Remainder
+
+
+LEVEL 2 — CALCULATIONS
+
+Problem 4 — Rectangle
+
+Create:
+length = 10
+breadth = 5
+
+Calculate:
+Area
+Perimeter
+
+Expected:
+Area = 50
+Perimeter = 30
+
+
+Problem 5 — Circle
+
+Create:
+radius = 7
+
+Calculate the area.
+
+Use:
+pi = 3.14
+
+
+Problem 6 — Temperature
+
+Create:
+celsius = 37
+
+Convert it to Fahrenheit using:
+
+F = (C * 9 / 5) + 32
+
+
+LEVEL 3 — TYPE CASTING
+
+Problem 7:
+Create:
+double value = 25.75;
+
+Convert it to int and print both values.
+
+Expected:
+Original = 25.75
+Converted = 25
+
+
+Problem 8:
+Create:
+int number = 100;
+
+Convert it to double.
+
+Print:
+Integer = 100
+Double = 100.0
+
+
+Problem 9:
+Predict the output before running:
+
+double x = 15.99;
+int y = (int) x;
+
+System.out.println(y);
+
+
+35. DAY 2 CHALLENGE — STUDENT RESULT
+
+Create a Java program containing:
+- Student Name
+- Tamil Mark
+- English Mark
+- Maths Mark
+- Science Mark
+- Social Mark
+
+Then calculate:
+- Total
+- Average
+
+Example:
+
+Student Name : Arun
+Tamil       : 80
+English     : 75
+Maths       : 90
+Science     : 85
+Social      : 70
+
+Total       : 400
+Average     : 80.0
+
+Do not use Scanner yet.
+
+Use hardcoded variables such as:
+int tamil = 80;
+int english = 75;
+
+
+36. DAY 2 ASSESSMENT
+
+Ask the learner:
+
+1. What is a variable?
+2. What is a data type?
+3. Difference between declaration and initialization?
+4. What are the 8 primitive data types?
+5. Difference between int and double?
+6. What is char?
+7. What values can boolean store?
+8. What is a String?
+9. What is an identifier?
+10. Is Java case-sensitive?
+11. What is a literal?
+12. What is type conversion?
+13. What is widening conversion?
+14. What is narrowing conversion?
+15. What is type casting?
+16. What happens when double is cast to int?
+17. Why do we write L after some long literals?
+18. Why do we write f after some float literals?
+19. Difference between 'A' and "A"?
+
+
+37. DAY 2 COMPLETION CRITERIA
+
+[ ] Declare variables
+[ ] Initialize variables
+[ ] Change variable values
+[ ] Identify appropriate basic data types
+[ ] Use int
+[ ] Use double
+[ ] Use char
+[ ] Use boolean
+[ ] Use String
+[ ] Print variables
+[ ] Perform arithmetic using variables
+[ ] Explain identifiers
+[ ] Follow Java variable naming rules
+[ ] Explain primitive vs reference types at a basic level
+[ ] Perform widening conversion
+[ ] Perform narrowing conversion
+[ ] Use explicit type casting
+[ ] Explain why data may be lost during narrowing
+
+
+DAY 2 TARGET
+
+The learner should understand how Java stores and works with information using variables and data types.
+
+Day 1 = Understand Java + write the first program.
+Day 2 = Store and manipulate information using variables.
